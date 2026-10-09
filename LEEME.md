@@ -13,15 +13,19 @@ Repositorio: github.com/dojedacifuentes/mlv-anonimizador (debe ser **privado**).
 | `motor/` | Copia del programa original (commit `5b8b7d1`, 03-10-2026; licencia MIT en `motor/LICENSE`) con cuatro cambios: español, filtros finales por configuración y el arreglo de un error del original (al procesar archivos ignoraba los tipos de dato de los complementos) |
 | `paquete-chile/` | `chile.py` (RUT con dígito verificador, roles de causa, propiedad, patentes, cuentas, teléfonos, direcciones, empresas, comunas, personas con el diccionario chileno y filtro de vocabulario jurídico), `listas.json` (nombres y apellidos, sacados del tachador de MLV) y `config-mlv.yaml` |
 | `pruebas/` | Documentos ficticios (`corpus.py`), medición (`medir.py`), archivos Word y PDF (`archivos/`), tachados (`tachados/`) y verificación (`verificar_archivos.py`) |
+| `app/` | La ventana del programa (`servidor.py` + `index.html`) |
 | `informe.html` | Resumen para la reunión con las cifras |
 
 ## Cómo se usa
 
 **Sin comandos:** en el Escritorio hay dos accesos directos.
-- **Tachar documento (MLV):** arrastra encima uno o varios PDF o Word, o haz doble clic para elegirlos. La versión
-  tachada queda en una carpeta «Tachados» junto al original, y esa carpeta se abre sola.
+- **Anonimizador Jurídico (MLV):** abre la ventana del programa en el navegador. Funciona sin internet: sólo
+  escucha en este computador (127.0.0.1). Arrastras un PDF o Word y muestra el antes y el después, la lista de lo
+  tachado, las alertas de datos sensibles y el botón para descargar la copia. Se apaga solo al cerrar la pestaña
+  (o con el botón «Cerrar») y borra sus archivos de trabajo (`.trabajo/`). Código en `app/`.
 - **Probar anonimizador (ejemplos):** tacha los 12 archivos ficticios, comprueba que no quede nada a la vista y abre
   el informe y las carpetas de antes y después.
+- `Tachar documento.bat` (en esta carpeta) sigue sirviendo para arrastrar varios archivos de una vez, en la ventana negra.
 
 Por comandos:
 
@@ -54,8 +58,7 @@ El modelo de español pesa unos 570 MB.
 
 ## Lo que falta (Fase 1)
 
-- Alertas de datos sensibles (salud, sindicato, religión…): hoy quedan a la vista, para que los revise un abogado.
+- Alertas de datos sensibles: la ventana ya las muestra (por palabras clave); falta poder tacharlas con un clic.
 - Etiquetas en español (`[PERSONA_1]` en vez de `[PERSON_1]`).
-- Probar la ventana de revisión (este Python no trae la parte gráfica).
 - Más documentos de prueba, en especial escaneados (OCR), tablas y notas al pie.
 - Las 6 pruebas propias del programa que fallan en Windows (por la carpeta de usuario `~`) también fallan sin nuestros cambios.
