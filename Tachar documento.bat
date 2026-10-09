@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 setlocal
-title Anonimizador Jurídico MLV
+title Tachador Jurídico MLV
 rem Arrastra PDF o Word sobre este archivo, o haz doble clic para elegirlos.
 set "RAIZ=%~dp0"
 set "PY=%RAIZ%.venv\Scripts\python.exe"
@@ -9,7 +9,7 @@ set "PYTHONIOENCODING=utf-8"
 if exist "%RAIZ%.ultima-salida" del "%RAIZ%.ultima-salida"
 
 echo.
-echo   ANONIMIZADOR JURÍDICO MLV  ·  prueba de concepto
+echo   TACHADOR JURÍDICO MLV  ·  prueba de concepto
 echo   Todo ocurre en este computador. No se envía nada a internet.
 echo.
 

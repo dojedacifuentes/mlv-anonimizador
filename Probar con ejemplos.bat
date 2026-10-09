@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 setlocal
-title Anonimizador Jurídico MLV · ejemplos
+title Tachador Jurídico MLV · ejemplos
 rem Tacha los 12 documentos FICTICIOS de prueba y abre el informe y las carpetas para comparar.
 set "RAIZ=%~dp0"
 set "PYTHONIOENCODING=utf-8"

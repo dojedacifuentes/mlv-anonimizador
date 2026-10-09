@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anonimizador Jurídico · Prueba</title>
+<title>Tachador Jurídico · Prueba</title>
 <style>
   :root {
     --fondo: #f6f5f1; --papel: #ffffff; --tinta: #1d232b; --suave: #5b6470; --linea: #dcdad3;
@@ -45,14 +45,18 @@
 </head>
 <body>
 <main>
-  <h1>Anonimizador Jurídico</h1>
+  <h1>Tachador Jurídico</h1>
   <p class="sub">Prueba de concepto para MLV Abogados · 9 de octubre de 2026 · identidad visual provisional</p>
 
-  <p class="aviso">Tomamos un anonimizador de código abierto (licencia MIT, funciona sin internet), le agregamos el
+  <p class="aviso">Tomamos un programa de código abierto para tachar documentos (licencia MIT, funciona sin internet), le agregamos el
   <b>español</b> y un <b>Paquete Chile</b>, y lo probamos con documentos jurídicos <b>ficticios</b>. Ningún dato real se usó ni salió del computador.</p>
 
+  <p class="aviso"><b>Seudonimiza, no anonimiza.</b> Cambia los datos que identifican a una persona por etiquetas. La copia
+  sigue siendo un dato personal para la Ley 21.719 y se trata como tal: puede volver a vincularse con la persona (el original
+  queda en el computador) y conserva a la vista datos sensibles y otros indirectos (ver «Lo que hay que decir con claridad»).</p>
+
   <div class="cifras">
-    <div class="cifra"><b>100 %</b><span>de los datos personales tachados en los 6 documentos (61 de 61)</span></div>
+    <div class="cifra"><b>61 / 61</b><span>nombres, RUT, direcciones, causas y otros datos que identifican directamente, tachados en los 6 documentos (no incluye sensibles, fechas ni cargos)</span></div>
     <div class="cifra"><b>0</b><span>términos jurídicos tachados por error (21 revisados)</span></div>
     <div class="cifra"><b>122 / 122</b><span>datos eliminados dentro de los PDF y Word, sin el autor en los metadatos</span></div>
     <div class="cifra"><b>≈ 69 %</b><span>lo que tachaba el programa original en los mismos documentos</span></div>
@@ -89,6 +93,7 @@
   <ul>
     <li><b>Es una prueba pequeña:</b> 6 documentos escritos por nosotros. Con documentos reales del estudio el resultado será menor; por eso la revisión humana es obligatoria.</li>
     <li><b>Los datos sensibles</b> (salud, afiliación sindical) hoy quedan a la vista: en el informe Ley Karin, el diagnóstico sigue legible. Hace falta una alerta para que el abogado decida.</li>
+    <li><b>También quedan a la vista</b> fechas, cargos («jefatura directa»), edad, nacionalidad, profesión y estado civil. Juntos pueden bastar para reconocer a alguien: por eso el resultado no es anónimo.</li>
     <li><b>No probado aún:</b> documentos escaneados, tablas, notas al pie, texto en imágenes (timbres, firmas).</li>
     <li>Revisando el programa original encontramos y corregimos un <b>error</b>: al procesar archivos ignoraba los tipos de dato agregados (los RUT no se tachaban en el PDF). Por eso no conviene usarlo «tal cual».</li>
   </ul>
@@ -98,10 +103,10 @@
     <li>Alertas de datos sensibles y dos modos con nombre claro: <b>seudonimizar</b> (con llave protegida) y <b>anonimizar</b> (sin vuelta atrás).</li>
     <li>Interfaz y etiquetas en español; ventana de revisión probada en los equipos del estudio.</li>
     <li>Registro de cada tratamiento sin datos personales; instalador para Windows.</li>
-    <li>Prueba con 30 a 50 documentos tipo del estudio, anonimizados por un abogado antes de usarlos.</li>
+    <li>Prueba con 30 a 50 documentos tipo del estudio, tachados y revisados por un abogado antes de usarlos.</li>
   </ul>
 
-  <p class="pie">Herramienta de apoyo; no reemplaza la revisión profesional ni constituye una garantía de anonimización.</p>
+  <p class="pie">Herramienta de apoyo: seudonimiza, no anonimiza. No reemplaza la revisión profesional.</p>
 </main>
 </body>
 </html>

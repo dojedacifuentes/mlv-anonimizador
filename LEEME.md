@@ -1,5 +1,7 @@
 # Anonimizador Jurídico MLV · prueba de concepto (Fase 0)
 
+> Nombre visible: **Tachador Jurídico**. Seudonimiza (cambia datos por etiquetas), no anonimiza: la copia sigue siendo un dato personal. El nombre del repositorio y el sufijo técnico `.anonymized` de los archivos vienen del programa original.
+
 Prueba hecha el 09-10-2026: el anonimizador de código abierto [arcane-tl/anonymizer](https://github.com/arcane-tl/anonymizer)
 (licencia MIT), con español y un **Paquete Chile**. Todo corre en este computador; no se envía nada a internet.
 
@@ -19,11 +21,11 @@ Repositorio: github.com/dojedacifuentes/mlv-anonimizador (debe ser **privado**).
 ## Cómo se usa
 
 **Sin comandos:** en el Escritorio hay dos accesos directos.
-- **Anonimizador Jurídico (MLV):** abre la ventana del programa en el navegador. Funciona sin internet: sólo
+- **Tachador Jurídico (MLV):** abre la ventana del programa en el navegador. Funciona sin internet: sólo
   escucha en este computador (127.0.0.1). Arrastras un PDF o Word y muestra el antes y el después, la lista de lo
   tachado, las alertas de datos sensibles y el botón para descargar la copia. Se apaga solo al cerrar la pestaña
   (o con el botón «Cerrar») y borra sus archivos de trabajo (`.trabajo/`). Código en `app/`.
-- **Probar anonimizador (ejemplos):** tacha los 12 archivos ficticios, comprueba que no quede nada a la vista y abre
+- **Probar tachador (ejemplos):** tacha los 12 archivos ficticios, comprueba que no quede nada a la vista y abre
   el informe y las carpetas de antes y después.
 - `Tachar documento.bat` (en esta carpeta) sigue sirviendo para arrastrar varios archivos de una vez, en la ventana negra.
 
