@@ -19,3 +19,4 @@ pruebas/salida/
 !pruebas/tachados/*.docx
 Tachados/
 **/Tachados/
+.ultima-salida

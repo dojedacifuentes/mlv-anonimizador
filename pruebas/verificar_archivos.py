@@ -41,7 +41,8 @@ for doc in DOCUMENTOS + RESERVA:
                 ok += 1
         autor = "Autor de prueba" in meta
         resumen.append({"archivo": p.name, "fugas": quedan, "autor_en_metadatos": autor})
-        estado = "OK" if not quedan and not autor else "REVISAR"
-        print(f"{estado:8s}{p.name}" + "".join(f"\n          {q}" for q in quedan) + ("\n          autor en metadatos" if autor else ""))
-print(f"\nDatos tachados dentro de los archivos: {ok}/{total}")
+        estado = "  ✓ limpio   " if not quedan and not autor else "  ✗ REVISAR  "
+        print(f"{estado}{p.name}" + "".join(f"\n      quedó a la vista: {q}" for q in quedan)
+              + ("\n      el autor sigue en los datos ocultos" if autor else ""))
+print(f"\n  Resultado: {ok} de {total} datos personales tachados dentro de los archivos.")
 (AQUI / "resultados-archivos.json").write_text(json.dumps({"ok": ok, "total": total, "archivos": resumen}, ensure_ascii=False, indent=1), encoding="utf-8")
