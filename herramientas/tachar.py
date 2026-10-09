@@ -14,7 +14,9 @@ from pathlib import Path
 import yaml
 
 RAIZ = Path(__file__).resolve().parent.parent
-PROGRAMA = RAIZ / ".venv" / "Scripts" / "anonymize.exe"
+# Se llama a través de python.exe (no de anonymize.exe): así sigue funcionando si se mueve la carpeta
+PYTHON = RAIZ / ".venv" / "Scripts" / "python.exe"
+PROGRAMA = [str(PYTHON), "-c", "from anonymizer.cli import run; run()"]
 CONFIG = RAIZ / "paquete-chile" / "config-mlv.yaml"
 TIPOS = {".pdf", ".docx", ".txt", ".md"}
 
@@ -47,7 +49,7 @@ def tachar(archivo: Path, salida: Path) -> bool:
     salida.mkdir(parents=True, exist_ok=True)
     env = dict(os.environ, PYTHONIOENCODING="utf-8")
     r = subprocess.run(
-        [str(PROGRAMA), str(archivo), "--config", str(CONFIG), "--format", "md,source", "--out-dir", str(salida), "-q"],
+        [*PROGRAMA, str(archivo), "--config", str(CONFIG), "--format", "md,source", "--out-dir", str(salida), "-q"],
         capture_output=True, text=True, encoding="utf-8", errors="replace", env=env,
     )
     md = salida / f"{archivo.stem}.anonymized.md"

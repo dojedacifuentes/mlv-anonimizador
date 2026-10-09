@@ -30,7 +30,7 @@ Repositorio: github.com/dojedacifuentes/mlv-anonimizador (debe ser **privado**).
 Por comandos:
 
 ```bash
-.venv/Scripts/anonymize documento.pdf --config paquete-chile/config-mlv.yaml --format md,source --out-dir salida
+.venv/Scripts/python -c "from anonymizer.cli import run; run()" documento.pdf --config paquete-chile/config-mlv.yaml --format md,source --out-dir salida
 ```
 
 Genera el PDF o Word tachado (mismo formato) y una versión en texto. Para volver a medir:
