@@ -1,0 +1,572 @@
+{
+ "variantes": {
+  "original": {
+   "nombre": "Programa original (inglés y finés)",
+   "docs": [
+    {
+     "debe": [
+      {
+       "texto": "Servicios Integrales Costa Azul Limitada",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "77.812.990-6",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "77.812.990-6"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Patricio Olivares Lagos",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Nicolás Andrés Gallardo Zúñiga",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "16543217-7",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "16543217-7"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Av. Libertad 1450 depto 504",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "(32) 2345 6789",
+       "tipo": "Teléfono",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "3456789012",
+       "tipo": "Cuenta",
+       "tachado": false,
+       "fugas": [
+        "3456789012"
+       ],
+       "estado": "escapado"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": false
+      },
+      {
+       "texto": "Inspección Provincial del Trabajo",
+       "intacto": false
+      },
+      {
+       "texto": "necesidades de la empresa",
+       "intacto": false
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "afiliado al Sindicato",
+       "presente": false
+      }
+     ],
+     "id": "05-finiquito",
+     "titulo": "Finiquito (reserva)",
+     "conteo": {
+      "ORG": 11,
+      "PERSON": 3,
+      "LOCATION": 6,
+      "PHONE_NUMBER": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "Carolina Henríquez Pino",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Gonzalo Ríos Escobar",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "10.288.456-6",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "10.288.456-6"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Ximena Paredes Uribe",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Isidora Ríos Paredes",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "C-2231-2024",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Los Aromos 778",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "778"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "grios.escobar@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Juzgado de Familia",
+       "intacto": false
+      },
+      {
+       "texto": "relación directa y regular",
+       "intacto": true
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "enfermedad crónica",
+       "presente": true
+      }
+     ],
+     "id": "06-acta-mediacion",
+     "titulo": "Acta de mediación familiar (reserva)",
+     "conteo": {
+      "PERSON": 4,
+      "ORG": 8,
+      "LOCATION": 3,
+      "EMAIL_ADDRESS": 1
+     }
+    }
+   ],
+   "tachados": 11,
+   "total": 16,
+   "intactos": 1,
+   "total_queda": 5
+  },
+  "espanol": {
+   "nombre": "Con español, sin Paquete Chile",
+   "docs": [
+    {
+     "debe": [
+      {
+       "texto": "Servicios Integrales Costa Azul Limitada",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "77.812.990-6",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "77.812.990-6"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Patricio Olivares Lagos",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Nicolás Andrés Gallardo Zúñiga",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "16543217-7",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "16543217-7"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Av. Libertad 1450 depto 504",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "1450"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "(32) 2345 6789",
+       "tipo": "Teléfono",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "3456789012",
+       "tipo": "Cuenta",
+       "tachado": false,
+       "fugas": [
+        "3456789012"
+       ],
+       "estado": "escapado"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Inspección Provincial del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "necesidades de la empresa",
+       "intacto": true
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "afiliado al Sindicato",
+       "presente": true
+      }
+     ],
+     "id": "05-finiquito",
+     "titulo": "Finiquito (reserva)",
+     "conteo": {
+      "LOCATION": 4,
+      "ORG": 1,
+      "PERSON": 2,
+      "PHONE_NUMBER": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "Carolina Henríquez Pino",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Gonzalo Ríos Escobar",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "10.288.456-6",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "10.288.456-6"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Ximena Paredes Uribe",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Isidora Ríos Paredes",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "C-2231-2024",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Los Aromos 778",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "grios.escobar@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Juzgado de Familia",
+       "intacto": false
+      },
+      {
+       "texto": "relación directa y regular",
+       "intacto": true
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "enfermedad crónica",
+       "presente": true
+      }
+     ],
+     "id": "06-acta-mediacion",
+     "titulo": "Acta de mediación familiar (reserva)",
+     "conteo": {
+      "PERSON": 4,
+      "LOCATION": 5,
+      "ORG": 1,
+      "EMAIL_ADDRESS": 1
+     }
+    }
+   ],
+   "tachados": 11,
+   "total": 16,
+   "intactos": 4,
+   "total_queda": 5
+  },
+  "mlv": {
+   "nombre": "Con español y Paquete Chile",
+   "docs": [
+    {
+     "debe": [
+      {
+       "texto": "Servicios Integrales Costa Azul Limitada",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "77.812.990-6",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Patricio Olivares Lagos",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Nicolás Andrés Gallardo Zúñiga",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "16543217-7",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Av. Libertad 1450 depto 504",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "(32) 2345 6789",
+       "tipo": "Teléfono",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "3456789012",
+       "tipo": "Cuenta",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Inspección Provincial del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "necesidades de la empresa",
+       "intacto": true
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "afiliado al Sindicato",
+       "presente": true
+      }
+     ],
+     "id": "05-finiquito",
+     "titulo": "Finiquito (reserva)",
+     "conteo": {
+      "CITY": 1,
+      "ORG": 2,
+      "CL_RUT": 2,
+      "PERSON": 2,
+      "STREET": 1,
+      "PHONE_NUMBER": 1,
+      "CL_CUENTA": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "Carolina Henríquez Pino",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Gonzalo Ríos Escobar",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "10.288.456-6",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Ximena Paredes Uribe",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Isidora Ríos Paredes",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "C-2231-2024",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Los Aromos 778",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "grios.escobar@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Juzgado de Familia",
+       "intacto": true
+      },
+      {
+       "texto": "relación directa y regular",
+       "intacto": true
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "enfermedad crónica",
+       "presente": true
+      }
+     ],
+     "id": "06-acta-mediacion",
+     "titulo": "Acta de mediación familiar (reserva)",
+     "conteo": {
+      "PERSON": 4,
+      "CL_RUT": 1,
+      "CITY": 2,
+      "CL_CAUSA": 1,
+      "LOCATION": 1,
+      "EMAIL_ADDRESS": 1
+     }
+    }
+   ],
+   "tachados": 16,
+   "total": 16,
+   "intactos": 5,
+   "total_queda": 5
+  }
+ }
+}

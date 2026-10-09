@@ -1,0 +1,66 @@
+{
+ "ok": 122,
+ "total": 122,
+ "archivos": [
+  {
+   "archivo": "01-contrato-trabajo.anonymized.pdf",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "01-contrato-trabajo.anonymized.docx",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "02-informe-ley-karin.anonymized.pdf",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "02-informe-ley-karin.anonymized.docx",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "03-demanda-laboral.anonymized.pdf",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "03-demanda-laboral.anonymized.docx",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "04-compraventa-y-correo.anonymized.pdf",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "04-compraventa-y-correo.anonymized.docx",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "05-finiquito.anonymized.pdf",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "05-finiquito.anonymized.docx",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "06-acta-mediacion.anonymized.pdf",
+   "fugas": [],
+   "autor_en_metadatos": false
+  },
+  {
+   "archivo": "06-acta-mediacion.anonymized.docx",
+   "fugas": [],
+   "autor_en_metadatos": false
+  }
+ ]
+}

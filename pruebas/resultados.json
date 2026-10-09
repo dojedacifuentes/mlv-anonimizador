@@ -1,0 +1,1461 @@
+{
+ "variantes": {
+  "original": {
+   "nombre": "Programa original (inglés y finés)",
+   "docs": [
+    {
+     "debe": [
+      {
+       "texto": "Inversiones Los Aromos SpA",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "76.543.210-3",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Rodrigo Andrés Fuenzalida Tapia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9.472.118-0",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "9.472.118-0"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Avenida Apoquindo 4499, oficina 1203",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Camila Ignacia Sepúlveda Arancibia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "15.834.221-9",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "15.834.221-9"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Pasaje Los Jazmines 1187",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Maipú",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "+56 9 8765 4321",
+       "tipo": "Teléfono",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "camila.sepulveda.a@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "00-123-45678-09",
+       "tipo": "Cuenta",
+       "tachado": false,
+       "fugas": [
+        "00-123-45678-09"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Rodrigo Fuenzalida Tapia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Camila Sepúlveda Arancibia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": false
+      },
+      {
+       "texto": "Juzgado de Letras del Trabajo de Santiago",
+       "intacto": true
+      },
+      {
+       "texto": "analista contable",
+       "intacto": false
+      },
+      {
+       "texto": "Fonasa",
+       "intacto": true
+      }
+     ],
+     "sensibles": [],
+     "id": "01-contrato-trabajo",
+     "titulo": "Contrato de trabajo",
+     "conteo": {
+      "PERSON": 11,
+      "ORG": 21,
+      "LOCATION": 6,
+      "PHONE_NUMBER": 1,
+      "EMAIL_ADDRESS": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "Valentina Paz Riquelme Ortiz",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "18.220.943-0",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Matías Ignacio Carrasco Bravo",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "12.904.577-9",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "12.904.577-9"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Javiera Muñoz Valdés",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Felipe Contreras Saavedra",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Andrea Lagos Venegas",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Constructora Puerto Claro Limitada",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Riquelme",
+       "tipo": "Persona",
+       "tachado": false,
+       "fugas": [
+        "Riquelme"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Daniela Soto Figueroa",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Ley N° 21.643",
+       "intacto": true
+      },
+      {
+       "texto": "Ley Karin",
+       "intacto": false
+      },
+      {
+       "texto": "Inspección del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Código del Trabajo",
+       "intacto": false
+      },
+      {
+       "texto": "Ley N° 16.744",
+       "intacto": false
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "trastorno ansioso",
+       "presente": true
+      },
+      {
+       "texto": "tratamiento psiquiátrico",
+       "presente": false
+      },
+      {
+       "texto": "licencia médica",
+       "presente": false
+      }
+     ],
+     "id": "02-informe-ley-karin",
+     "titulo": "Informe de investigación (Ley Karin)",
+     "conteo": {
+      "ORG": 14,
+      "PERSON": 8,
+      "LOCATION": 4
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "JORGE ESTEBAN NÚÑEZ PIZARRO",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "21.056.334-2",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "21.056.334-2"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "calle Los Copihues 245, departamento 32",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "245"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "Puente Alto",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Transportes Cordillera Sur Ltda.",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Sebastián Herrera Gallardo",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Avenida Vicuña Mackenna 7250",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "7250"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "HJKL·42",
+       "tipo": "Patente",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "O-4512-2025",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "C-18233-2024",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Francisca Morales Espinoza",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": false
+      },
+      {
+       "texto": "Juzgado Civil",
+       "intacto": false
+      },
+      {
+       "texto": "PRIMER OTROSÍ",
+       "intacto": false
+      },
+      {
+       "texto": "SEGUNDO OTROSÍ",
+       "intacto": false
+      }
+     ],
+     "sensibles": [],
+     "id": "03-demanda-laboral",
+     "titulo": "Demanda por despido injustificado",
+     "conteo": {
+      "PERSON": 13,
+      "ORG": 19,
+      "LOCATION": 3
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "María José Valenzuela Cáceres",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "15.834.221-9",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "15.834.221-9"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Tomás Alfonso Reyes Medina",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9.472.118-0",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "9.472.118-0"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "fojas 45.871 número 66.203",
+       "tipo": "Propiedad",
+       "tachado": false,
+       "fugas": [
+        "fojas 45.871 número 66.203"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "1523-87",
+       "tipo": "Propiedad",
+       "tachado": false,
+       "fugas": [
+        "1523-87"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Ñuñoa",
+       "tipo": "Comuna",
+       "tachado": false,
+       "fugas": [
+        "Ñuñoa"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "tomas.reyes.m@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Antonia Bustos",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9 6123 4455",
+       "tipo": "Teléfono",
+       "tachado": false,
+       "fugas": [
+        "9 6123 4455"
+       ],
+       "estado": "escapado"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Conservador de Bienes Raíces",
+       "intacto": false
+      },
+      {
+       "texto": "Registro de Propiedad",
+       "intacto": false
+      },
+      {
+       "texto": "vale vista",
+       "intacto": false
+      }
+     ],
+     "sensibles": [],
+     "id": "04-compraventa-y-correo",
+     "titulo": "Compraventa de inmueble y correo del cliente",
+     "conteo": {
+      "PERSON": 5,
+      "ORG": 12,
+      "LOCATION": 5,
+      "EMAIL_ADDRESS": 1
+     }
+    }
+   ],
+   "tachados": 31,
+   "total": 45,
+   "intactos": 4,
+   "total_queda": 16
+  },
+  "espanol": {
+   "nombre": "Con español, sin Paquete Chile",
+   "docs": [
+    {
+     "debe": [
+      {
+       "texto": "Inversiones Los Aromos SpA",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "76.543.210-3",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "76.543.210-3"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Rodrigo Andrés Fuenzalida Tapia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9.472.118-0",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "9.472.118-0"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Avenida Apoquindo 4499, oficina 1203",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "4499",
+        "1203"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "Camila Ignacia Sepúlveda Arancibia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "15.834.221-9",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "15.834.221-9"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Pasaje Los Jazmines 1187",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "1187"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "Maipú",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "+56 9 8765 4321",
+       "tipo": "Teléfono",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "camila.sepulveda.a@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "00-123-45678-09",
+       "tipo": "Cuenta",
+       "tachado": false,
+       "fugas": [
+        "00-123-45678-09"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Rodrigo Fuenzalida Tapia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Camila Sepúlveda Arancibia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Juzgado de Letras del Trabajo de Santiago",
+       "intacto": false
+      },
+      {
+       "texto": "analista contable",
+       "intacto": true
+      },
+      {
+       "texto": "Fonasa",
+       "intacto": true
+      }
+     ],
+     "sensibles": [],
+     "id": "01-contrato-trabajo",
+     "titulo": "Contrato de trabajo",
+     "conteo": {
+      "LOCATION": 6,
+      "ORG": 4,
+      "PERSON": 5,
+      "PHONE_NUMBER": 1,
+      "EMAIL_ADDRESS": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "Valentina Paz Riquelme Ortiz",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "18.220.943-0",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "18.220.943-0"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Matías Ignacio Carrasco Bravo",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "12.904.577-9",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "12.904.577-9"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Javiera Muñoz Valdés",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Felipe Contreras Saavedra",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Andrea Lagos Venegas",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Constructora Puerto Claro Limitada",
+       "tipo": "Empresa",
+       "tachado": false,
+       "fugas": [
+        "Constructora Puerto Claro Limitada"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Riquelme",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Daniela Soto Figueroa",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Ley N° 21.643",
+       "intacto": true
+      },
+      {
+       "texto": "Ley Karin",
+       "intacto": false
+      },
+      {
+       "texto": "Inspección del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Código del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Ley N° 16.744",
+       "intacto": true
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "trastorno ansioso",
+       "presente": true
+      },
+      {
+       "texto": "tratamiento psiquiátrico",
+       "presente": true
+      },
+      {
+       "texto": "licencia médica",
+       "presente": true
+      }
+     ],
+     "id": "02-informe-ley-karin",
+     "titulo": "Informe de investigación (Ley Karin)",
+     "conteo": {
+      "PERSON": 7,
+      "LOCATION": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "JORGE ESTEBAN NÚÑEZ PIZARRO",
+       "tipo": "Persona",
+       "tachado": false,
+       "fugas": [
+        "PIZARRO"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "21.056.334-2",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "21.056.334-2"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "calle Los Copihues 245, departamento 32",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "245"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "Puente Alto",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Transportes Cordillera Sur Ltda.",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Sebastián Herrera Gallardo",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Avenida Vicuña Mackenna 7250",
+       "tipo": "Dirección",
+       "tachado": false,
+       "fugas": [
+        "Mackenna",
+        "7250"
+       ],
+       "estado": "parcial"
+      },
+      {
+       "texto": "HJKL·42",
+       "tipo": "Patente",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "O-4512-2025",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "C-18233-2024",
+       "tipo": "Causa",
+       "tachado": false,
+       "fugas": [
+        "C-18233-2024"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Francisca Morales Espinoza",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": false
+      },
+      {
+       "texto": "Juzgado Civil",
+       "intacto": false
+      },
+      {
+       "texto": "PRIMER OTROSÍ",
+       "intacto": false
+      },
+      {
+       "texto": "SEGUNDO OTROSÍ",
+       "intacto": false
+      }
+     ],
+     "sensibles": [],
+     "id": "03-demanda-laboral",
+     "titulo": "Demanda por despido injustificado",
+     "conteo": {
+      "PERSON": 8,
+      "ORG": 6,
+      "LOCATION": 5
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "María José Valenzuela Cáceres",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "15.834.221-9",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "15.834.221-9"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Tomás Alfonso Reyes Medina",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9.472.118-0",
+       "tipo": "RUT",
+       "tachado": false,
+       "fugas": [
+        "9.472.118-0"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "fojas 45.871 número 66.203",
+       "tipo": "Propiedad",
+       "tachado": false,
+       "fugas": [
+        "fojas 45.871 número 66.203"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "1523-87",
+       "tipo": "Propiedad",
+       "tachado": false,
+       "fugas": [
+        "1523-87"
+       ],
+       "estado": "escapado"
+      },
+      {
+       "texto": "Ñuñoa",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "tomas.reyes.m@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Antonia Bustos",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9 6123 4455",
+       "tipo": "Teléfono",
+       "tachado": false,
+       "fugas": [
+        "9 6123 4455"
+       ],
+       "estado": "escapado"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Conservador de Bienes Raíces",
+       "intacto": false
+      },
+      {
+       "texto": "Registro de Propiedad",
+       "intacto": false
+      },
+      {
+       "texto": "vale vista",
+       "intacto": true
+      }
+     ],
+     "sensibles": [],
+     "id": "04-compraventa-y-correo",
+     "titulo": "Compraventa de inmueble y correo del cliente",
+     "conteo": {
+      "PERSON": 5,
+      "LOCATION": 2,
+      "ORG": 1,
+      "EMAIL_ADDRESS": 1
+     }
+    }
+   ],
+   "tachados": 26,
+   "total": 45,
+   "intactos": 8,
+   "total_queda": 16
+  },
+  "mlv": {
+   "nombre": "Con español y Paquete Chile",
+   "docs": [
+    {
+     "debe": [
+      {
+       "texto": "Inversiones Los Aromos SpA",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "76.543.210-3",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Rodrigo Andrés Fuenzalida Tapia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9.472.118-0",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Avenida Apoquindo 4499, oficina 1203",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Camila Ignacia Sepúlveda Arancibia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "15.834.221-9",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Pasaje Los Jazmines 1187",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Maipú",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "+56 9 8765 4321",
+       "tipo": "Teléfono",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "camila.sepulveda.a@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "00-123-45678-09",
+       "tipo": "Cuenta",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Rodrigo Fuenzalida Tapia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Camila Sepúlveda Arancibia",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Juzgado de Letras del Trabajo de Santiago",
+       "intacto": true
+      },
+      {
+       "texto": "analista contable",
+       "intacto": true
+      },
+      {
+       "texto": "Fonasa",
+       "intacto": true
+      }
+     ],
+     "sensibles": [],
+     "id": "01-contrato-trabajo",
+     "titulo": "Contrato de trabajo",
+     "conteo": {
+      "CITY": 3,
+      "ORG": 2,
+      "CL_RUT": 3,
+      "PERSON": 4,
+      "STREET": 2,
+      "PHONE_NUMBER": 1,
+      "EMAIL_ADDRESS": 1,
+      "CL_CUENTA": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "Valentina Paz Riquelme Ortiz",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "18.220.943-0",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Matías Ignacio Carrasco Bravo",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "12.904.577-9",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Javiera Muñoz Valdés",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Felipe Contreras Saavedra",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Andrea Lagos Venegas",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Constructora Puerto Claro Limitada",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Riquelme",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Daniela Soto Figueroa",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Ley N° 21.643",
+       "intacto": true
+      },
+      {
+       "texto": "Ley Karin",
+       "intacto": true
+      },
+      {
+       "texto": "Inspección del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Código del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Ley N° 16.744",
+       "intacto": true
+      }
+     ],
+     "sensibles": [
+      {
+       "texto": "trastorno ansioso",
+       "presente": true
+      },
+      {
+       "texto": "tratamiento psiquiátrico",
+       "presente": true
+      },
+      {
+       "texto": "licencia médica",
+       "presente": true
+      }
+     ],
+     "id": "02-informe-ley-karin",
+     "titulo": "Informe de investigación (Ley Karin)",
+     "conteo": {
+      "PERSON": 7,
+      "CL_RUT": 2,
+      "ORG": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "JORGE ESTEBAN NÚÑEZ PIZARRO",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "21.056.334-2",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "calle Los Copihues 245, departamento 32",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Puente Alto",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Transportes Cordillera Sur Ltda.",
+       "tipo": "Empresa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Sebastián Herrera Gallardo",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Avenida Vicuña Mackenna 7250",
+       "tipo": "Dirección",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "HJKL·42",
+       "tipo": "Patente",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "O-4512-2025",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "C-18233-2024",
+       "tipo": "Causa",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Francisca Morales Espinoza",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Código del Trabajo",
+       "intacto": true
+      },
+      {
+       "texto": "Juzgado Civil",
+       "intacto": true
+      },
+      {
+       "texto": "PRIMER OTROSÍ",
+       "intacto": true
+      },
+      {
+       "texto": "SEGUNDO OTROSÍ",
+       "intacto": true
+      }
+     ],
+     "sensibles": [],
+     "id": "03-demanda-laboral",
+     "titulo": "Demanda por despido injustificado",
+     "conteo": {
+      "PERSON": 3,
+      "CL_RUT": 2,
+      "STREET": 3,
+      "CITY": 2,
+      "ORG": 1,
+      "CL_PATENTE": 1,
+      "CL_CAUSA": 2,
+      "LOCATION": 1
+     }
+    },
+    {
+     "debe": [
+      {
+       "texto": "María José Valenzuela Cáceres",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "15.834.221-9",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Tomás Alfonso Reyes Medina",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9.472.118-0",
+       "tipo": "RUT",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "fojas 45.871 número 66.203",
+       "tipo": "Propiedad",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "1523-87",
+       "tipo": "Propiedad",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Ñuñoa",
+       "tipo": "Comuna",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "tomas.reyes.m@correo-ficticio.cl",
+       "tipo": "Correo",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "Antonia Bustos",
+       "tipo": "Persona",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      },
+      {
+       "texto": "9 6123 4455",
+       "tipo": "Teléfono",
+       "tachado": true,
+       "fugas": [],
+       "estado": "completo"
+      }
+     ],
+     "queda": [
+      {
+       "texto": "Conservador de Bienes Raíces",
+       "intacto": true
+      },
+      {
+       "texto": "Registro de Propiedad",
+       "intacto": true
+      },
+      {
+       "texto": "vale vista",
+       "intacto": true
+      }
+     ],
+     "sensibles": [],
+     "id": "04-compraventa-y-correo",
+     "titulo": "Compraventa de inmueble y correo del cliente",
+     "conteo": {
+      "PERSON": 5,
+      "CL_RUT": 2,
+      "CL_PROPIEDAD": 2,
+      "CITY": 1,
+      "EMAIL_ADDRESS": 1,
+      "PHONE_NUMBER": 1
+     }
+    }
+   ],
+   "tachados": 45,
+   "total": 45,
+   "intactos": 16,
+   "total_queda": 16
+  }
+ }
+}

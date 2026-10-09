@@ -1,0 +1,21 @@
+# Instalación local (se rehace con los comandos del LEEME)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Historial del programa original (copia local; los cambios están en motor-cambios-mlv.patch)
+.motor-upstream.git/
+# Resultados que se regeneran con pruebas/medir.py
+pruebas/salida/
+
+# Seguridad: ningún documento real entra al repositorio.
+# Sólo se permiten los PDF y Word ficticios de pruebas/.
+*.pdf
+*.docx
+*.doc
+!pruebas/archivos/*.pdf
+!pruebas/archivos/*.docx
+!pruebas/tachados/*.pdf
+!pruebas/tachados/*.docx
+Tachados/
+**/Tachados/

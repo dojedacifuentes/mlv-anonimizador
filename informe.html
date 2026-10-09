@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anonimizador Jurídico · Prueba</title>
+<style>
+  :root {
+    --fondo: #f6f5f1; --papel: #ffffff; --tinta: #1d232b; --suave: #5b6470; --linea: #dcdad3;
+    --acento: #1f3a5f; --bien: #2f6b3f; --mal: #9b2f2f; --medio: #8a6a1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fondo: #15181c; --papel: #1d2127; --tinta: #e6e4de; --suave: #a3abb5; --linea: #333a43;
+      --acento: #8fb0d9; --bien: #7cc28c; --mal: #e08a8a; --medio: #d8b86a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--tinta);
+         font: 16px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; color: var(--acento); }
+  h1 { font-size: 30px; margin: 0 0 4px; }
+  h2 { font-size: 21px; margin: 36px 0 10px; border-bottom: 1px solid var(--linea); padding-bottom: 6px; }
+  .sub { color: var(--suave); margin: 0 0 24px; }
+  .aviso { background: var(--papel); border-left: 4px solid var(--acento); padding: 12px 16px; border-radius: 4px; }
+  .cifras { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 18px 0; }
+  .cifra { background: var(--papel); border: 1px solid var(--linea); border-radius: 6px; padding: 14px 16px; }
+  .cifra b { display: block; font-size: 30px; font-family: Georgia, serif; color: var(--acento); }
+  .cifra span { color: var(--suave); font-size: 14px; }
+  .tabla { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--papel); font-size: 15px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--linea); }
+  th { color: var(--suave); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .03em; }
+  td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bien { color: var(--bien); font-weight: 600; } .mal { color: var(--mal); } .medio { color: var(--medio); }
+  .par { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 640px) { .par { grid-template-columns: 1fr; } }
+  figure { margin: 0; background: var(--papel); border: 1px solid var(--linea); border-radius: 6px; padding: 8px; }
+  figure img { width: 100%; display: block; border-radius: 3px; background: #fff; }
+  figcaption { color: var(--suave); font-size: 13px; padding: 6px 2px 0; }
+  ul { padding-left: 20px; } li { margin: 4px 0; }
+  .pie { color: var(--suave); font-size: 13px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Anonimizador Jurídico</h1>
+  <p class="sub">Prueba de concepto para MLV Abogados · 9 de octubre de 2026 · identidad visual provisional</p>
+
+  <p class="aviso">Tomamos un anonimizador de código abierto (licencia MIT, funciona sin internet), le agregamos el
+  <b>español</b> y un <b>Paquete Chile</b>, y lo probamos con documentos jurídicos <b>ficticios</b>. Ningún dato real se usó ni salió del computador.</p>
+
+  <div class="cifras">
+    <div class="cifra"><b>100 %</b><span>de los datos personales tachados en los 6 documentos (61 de 61)</span></div>
+    <div class="cifra"><b>0</b><span>términos jurídicos tachados por error (21 revisados)</span></div>
+    <div class="cifra"><b>122 / 122</b><span>datos eliminados dentro de los PDF y Word, sin el autor en los metadatos</span></div>
+    <div class="cifra"><b>≈ 69 %</b><span>lo que tachaba el programa original en los mismos documentos</span></div>
+  </div>
+
+  <h2>Qué detecta el Paquete Chile</h2>
+  <ul>
+    <li><b>RUT y RUN</b>, con o sin puntos, comprobando el dígito verificador; pasaportes y DNI con rótulo.</li>
+    <li><b>Personas</b> con dos apellidos, aunque no lleven «don» ni «señora» (diccionario de 438 nombres y 437 apellidos usados en Chile).</li>
+    <li><b>Causas:</b> Rol C-…, RIT O-…, T-…, RUC de fiscalía. <b>Propiedad:</b> fojas y número del Conservador, rol de avalúo.</li>
+    <li>Direcciones con depto. y oficina, comunas, teléfonos +56 y celulares, cuentas bancarias, patentes, empresas SpA, Ltda., S.A. y EIRL.</li>
+    <li><b>Lo que respeta:</b> tribunales, servicios públicos, leyes («Ley Karin»), códigos y fórmulas de escrito («PRIMER OTROSÍ», «POR TANTO»).</li>
+  </ul>
+
+  <h2>Resultados</h2>
+  <div class="tabla">
+  <table>
+    <tr><th>Versión</th><th>4 documentos de ajuste</th><th>2 documentos nuevos</th><th>Términos jurídicos respetados</th></tr>
+    <tr><td>Programa original (inglés y finés)</td><td class="n mal">31 / 45</td><td class="n mal">11 / 16</td><td class="n mal">5 / 21</td></tr>
+    <tr><td>Con español, sin Paquete Chile</td><td class="n mal">26 / 45</td><td class="n medio">11 / 16</td><td class="n medio">12 / 21</td></tr>
+    <tr><td><b>Con español y Paquete Chile</b></td><td class="n bien">45 / 45</td><td class="n bien">16 / 16</td><td class="n bien">21 / 21</td></tr>
+  </table>
+  </div>
+  <p>Documentos: contrato de trabajo, informe de investigación por Ley Karin, demanda laboral, compraventa con correo del cliente, finiquito y acta de mediación familiar.
+  Se cuenta como error que quede a la vista <i>cualquier pedazo</i> de un dato (por ejemplo, el número de la casa).</p>
+
+  <h2>Antes y después (PDF real, ficticio)</h2>
+  <div class="par">
+    <figure><img src="pruebas/vista-02-informe-ley-karin-antes.png" alt="Informe Ley Karin antes de tachar"><figcaption>Informe Ley Karin · original</figcaption></figure>
+    <figure><img src="pruebas/vista-02-informe-ley-karin-despues.png" alt="Informe Ley Karin tachado"><figcaption>Tachado dentro del mismo PDF</figcaption></figure>
+  </div>
+
+  <h2>Lo que hay que decir con claridad</h2>
+  <ul>
+    <li><b>Es una prueba pequeña:</b> 6 documentos escritos por nosotros. Con documentos reales del estudio el resultado será menor; por eso la revisión humana es obligatoria.</li>
+    <li><b>Los datos sensibles</b> (salud, afiliación sindical) hoy quedan a la vista: en el informe Ley Karin, el diagnóstico sigue legible. Hace falta una alerta para que el abogado decida.</li>
+    <li><b>No probado aún:</b> documentos escaneados, tablas, notas al pie, texto en imágenes (timbres, firmas).</li>
+    <li>Revisando el programa original encontramos y corregimos un <b>error</b>: al procesar archivos ignoraba los tipos de dato agregados (los RUT no se tachaban en el PDF). Por eso no conviene usarlo «tal cual».</li>
+  </ul>
+
+  <h2>Siguiente paso propuesto (Fase 1)</h2>
+  <ul>
+    <li>Alertas de datos sensibles y dos modos con nombre claro: <b>seudonimizar</b> (con llave protegida) y <b>anonimizar</b> (sin vuelta atrás).</li>
+    <li>Interfaz y etiquetas en español; ventana de revisión probada en los equipos del estudio.</li>
+    <li>Registro de cada tratamiento sin datos personales; instalador para Windows.</li>
+    <li>Prueba con 30 a 50 documentos tipo del estudio, anonimizados por un abogado antes de usarlos.</li>
+  </ul>
+
+  <p class="pie">Herramienta de apoyo; no reemplaza la revisión profesional ni constituye una garantía de anonimización.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+# -*- mode: python ; coding: utf-8 -*-
+# PyInstaller spec: frozen GUI only (CLI stays in runtime/ venv).
+# Build:  pyinstaller packaging/windows/Anonymizer.spec
+# From repo root, with anonymizer + pyyaml installed in the active env.
+
+import sys
+from pathlib import Path
+
+block_cipher = None
+root = Path(SPECPATH).resolve().parents[1]
+gui_entry = root / "src" / "anonymizer" / "gui" / "__main__.py"
+
+_gui_assets = root / "src" / "anonymizer" / "gui" / "assets"
+_datas = []
+_binaries = []
+_hidden = [
+    "anonymizer",
+    "anonymizer.gui",
+    "anonymizer.gui.app",
+    "anonymizer.lists_io",
+    "yaml",
+    "yaml.loader",
+    "yaml.dumper",
+    "yaml.constructor",
+    "yaml.representer",
+    "yaml.resolver",
+    "yaml.scanner",
+    "yaml.parser",
+    "yaml.composer",
+    "yaml.emitter",
+    "yaml.serializer",
+    "yaml.nodes",
+    "yaml.events",
+    "yaml.tokens",
+    "yaml.error",
+    "yaml.cyaml",
+    "_yaml",
+]
+
+# Bundle full PyYAML (package is imported as ``yaml``).
+try:
+    from PyInstaller.utils.hooks import collect_all
+
+    _yd, _yb, _yh = collect_all("yaml")
+    _datas += _yd
+    _binaries += _yb
+    _hidden += list(_yh)
+except Exception:
+    pass
+
+if _gui_assets.is_dir():
+    _datas.append((str(_gui_assets), "anonymizer/gui/assets"))
+
+_icon = root / "packaging" / "windows" / "icons" / "Anonymizer.ico"
+_icon_arg = str(_icon) if _icon.is_file() else None
+
+# Fail the freeze early if PyYAML is missing on the build host.
+try:
+    import yaml  # noqa: F401
+except ImportError as exc:  # pragma: no cover
+    raise SystemExit(
+        "PyYAML (import yaml) is required on the build host for Anonymizer.exe. "
+        "build-release.ps1 should pip-install pyyaml before PyInstaller."
+    ) from exc
+
+a = Analysis(
+    [str(gui_entry)],
+    pathex=[str(root / "src")],
+    binaries=_binaries,
+    datas=_datas,
+    hiddenimports=_hidden,
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[
+        # Keep GUI slim — detection runs in separate anonymize CLI process
+        "spacy",
+        "thinc",
+        "torch",
+        "presidio_analyzer",
+        "presidio_anonymizer",
+        "pymupdf",
+        "fitz",
+        "lingua",
+    ],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    [],
+    name="Anonymizer",
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=False,  # avoid optional UPX dependency on build hosts
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=False,  # windowed GUI
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+    icon=_icon_arg,
+)

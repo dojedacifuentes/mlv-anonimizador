@@ -1,0 +1,101 @@
+# Example configuration for anonymizer
+# Copy to config.yaml and pass with: anonymize doc.pdf --config config.yaml
+#
+# Detection is versatile — no built-in company/person catalogs:
+#   patterns (IDs, plates, postcodes, legal forms) + heuristics + spaCy NER
+#   + optional LLM (--llm / use_llm below)
+
+# ---------------------------------------------------------------------------
+# Operating mode (also: CLI --mode extract|standard|strict)
+# ---------------------------------------------------------------------------
+# extract  — PDF/DOCX/text → Markdown only (no redaction; images/logos skipped)
+# standard — identity PII: person, email, phone, hetu, addresses, IBAN, cards, IP
+#            (keeps companies, Y-tunnus, VAT, URLs, country-level LOCATION, plates)
+# strict   — full scrub (default): also ORG/brands, LOCATION, URLs, plates, VAT…
+#
+# mode: strict
+
+score_threshold: 0.5
+
+# Explicit entity list overrides the mode preset when set:
+# entities:
+#   - PERSON
+#   - EMAIL_ADDRESS
+#   - PHONE_NUMBER
+
+# Allow/deny packs (templates). Prefer these over a single global list.
+# Builtin packs (field labels, legal boilerplate) are on by default.
+# List packs: anonymize templates
+# templates_enabled:
+#   - fi-field-labels
+#   - en-field-labels
+#   - en-legal-boilerplate
+#   - fi-legal-boilerplate
+#   - my-company-list
+#
+# After review, teach a user pack:
+#   anonymize doc.pdf --review --learn-to my-company-list
+#
+# Legacy: allowlist / denylist still load; on first use with lists and no
+# templates_enabled, they are migrated into templates/migrated-from-config.yaml
+# allowlist_extra:
+#   - My Internal Product Name
+allowlist:
+  - Y-tunnus
+  - Hetu
+
+# Optional domain FP lexicon extras (roles / legal phrases / noise tokens).
+# Merged with built-ins at load time — not a company/person catalog.
+# lexicon_extra:
+#   roles: [broker, asiamies]
+#   legal_phrases: [governing law, sovellettava laki]
+#   legalish_tokens: [deductible, omavastuu]
+#   formish_tokens: []
+#   weak_org_stems: []
+#   allowlist_seeds: [My Internal Product Label]
+
+# Always redact these (your known suppliers, etc.)
+denylist:
+  # - text: "Your Supplier Name Here"
+  #   entity_type: ORG
+
+# How to replace findings in the Markdown body:
+#   placeholder (default) — [PERSON_1], [EMAIL_1], …
+#   remove — delete the text entirely (no tags; --review not available)
+# redact_style: placeholder
+
+# Save as / --format (comma-separated; any combo):
+#   md     — Markdown ({stem}.anonymized.md)  [default]
+#   source — redacted original PDF/DOCX (black-box / tags); plain text → Markdown
+#            Native PDF is hardened best-effort (not a forensic wipe).
+#   pdf    — reflowed Text PDF ({stem}.anonymized.text.pdf)
+# Compat: both=md,source ; all=md,source,pdf
+# GUI: Save as ticks. More options → fail_on_native_miss / letterhead / redact_style.
+# format: md
+# format: md,pdf
+# format: md,source,pdf
+# Deprecated: write_text_pdf: true  (adds pdf to the format set)
+# fail_on_native_miss: false
+# native_min_match_rate: 1.0
+# redact_letterhead_images: false
+
+# Language for NER: auto | en | fi | sv | en,fi | en,sv | …
+# lang: auto
+
+# Optional spaCy model overrides (defaults: en_core_web_lg, fi_core_news_lg, sv_core_news_lg)
+# spacy_models:
+#   sv: sv_core_news_md
+
+# Custom pattern / Python recognizers (local files only — see docs/plugins.md)
+# recognizers:
+#   - path: ./patterns/employee_id.yaml
+#   # - module: mypkg.recs:MyRecognizer
+#   # - python: ./plugins/my_rec.py
+#   #   class: MyRecognizer
+
+# Optional LLM layer. CLI requires --llm even if use_llm is true here
+# (prevents surprise remote sends from shared configs).
+# use_llm: false
+# llm_provider: ollama   # or xai (remote — sends document text to api.x.ai)
+# llm_model: llama3.2
+# ollama_url: http://127.0.0.1:11434   # non-loopback warned; blocked with --offline

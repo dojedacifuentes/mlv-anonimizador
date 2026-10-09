@@ -1,0 +1,113 @@
+# Configuración del Anonimizador Jurídico MLV (prueba de concepto)
+# Uso: anonymize documento.pdf --config paquete-chile/config-mlv.yaml
+
+mode: strict
+lang: es            # documentos en español de Chile
+use_llm: false      # nunca se envía texto a una IA externa
+llm_provider: "off"
+
+spacy_models:
+  es: es_core_news_lg
+  en: en_core_web_sm   # el motor de patrones necesita uno en inglés; el pequeño basta
+
+recognizers:
+  - python: ./chile.py
+    class: ClRutRecognizer
+    label: RUT
+    priority: 3
+  - python: ./chile.py
+    class: ClCausaRecognizer
+    label: CAUSA
+    priority: 3
+  - python: ./chile.py
+    class: ClPropiedadRecognizer
+    label: PROPIEDAD
+    priority: 3
+  - python: ./chile.py
+    class: ClPatenteRecognizer
+    label: PATENTE
+    priority: 3
+  - python: ./chile.py
+    class: ClCuentaRecognizer
+    label: CUENTA
+    priority: 3
+  - python: ./chile.py
+    class: ClTelefonoRecognizer
+    label: PHONE
+    priority: 3
+  - python: ./chile.py
+    class: ClDireccionRecognizer
+    label: STREET
+    priority: 3
+  - python: ./chile.py
+    class: ClLugarRecognizer
+    label: CITY
+    priority: 3
+  - python: ./chile.py
+    class: ClEmpresaRecognizer
+    label: ORG
+    priority: 2
+  - python: ./chile.py
+    class: ClPersonaRecognizer
+    label: PERSON
+    priority: 2
+
+# Filtro final con el vocabulario jurídico chileno
+postfilters:
+  - python: ./chile.py
+    function: filtrar
+
+# Lo que nunca se tacha: instituciones, normas y vocabulario jurídico chileno
+allowlist_extra:
+  - Corte Suprema
+  - Corte de Apelaciones
+  - Corte de Apelaciones de Santiago
+  - Juzgado de Letras del Trabajo
+  - Juzgado de Letras del Trabajo de Santiago
+  - Juzgado de Garantía
+  - Juzgado Civil
+  - Juzgado de Familia
+  - Tribunal de Juicio Oral en lo Penal
+  - Ministerio Público
+  - Fiscalía
+  - Defensoría Penal Pública
+  - Dirección del Trabajo
+  - Inspección del Trabajo
+  - Inspección Comunal del Trabajo
+  - Servicio de Impuestos Internos
+  - Tesorería General de la República
+  - Contraloría General de la República
+  - Consejo para la Transparencia
+  - Agencia de Protección de Datos Personales
+  - Superintendencia de Seguridad Social
+  - Mutual de Seguridad
+  - Asociación Chilena de Seguridad
+  - Instituto de Seguridad Laboral
+  - Conservador de Bienes Raíces
+  - Registro Civil
+  - Servicio de Registro Civil e Identificación
+  - Código del Trabajo
+  - Código Civil
+  - Código de Procedimiento Civil
+  - Código Procesal Penal
+  - Constitución Política de la República
+  - Ley Karin
+  - Ley N° 21.643
+  - Ley N° 21.719
+  - Ley N° 19.628
+  - el Trabajador
+  - la Trabajadora
+  - el Empleador
+  - la Empresa
+  - el Arrendador
+  - el Arrendatario
+  - la Denunciante
+  - el Denunciante
+  - el Denunciado
+  - la Denunciada
+  - Considerando
+  - Vistos
+  - Otrosí
+  - Santiago de Chile
+  - Chile
+  - República de Chile

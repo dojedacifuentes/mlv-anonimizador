@@ -1,0 +1,195 @@
+diff --git a/src/anonymizer/anonymize/config.py b/src/anonymizer/anonymize/config.py
+index a7649ee..8bf53d0 100644
+--- a/src/anonymizer/anonymize/config.py
++++ b/src/anonymizer/anonymize/config.py
+@@ -106,6 +106,7 @@ SPACY_MODELS = {
+     "en": "en_core_web_lg",
+     "fi": "fi_core_news_lg",
+     "sv": "sv_core_news_lg",
++    "es": "es_core_news_lg",
+ }
+ 
+ # Lighter fallbacks if large models missing
+@@ -113,10 +114,11 @@ SPACY_FALLBACKS = {
+     "en": ["en_core_web_md", "en_core_web_sm"],
+     "fi": ["fi_core_news_md", "fi_core_news_sm"],
+     "sv": ["sv_core_news_md", "sv_core_news_sm"],
++    "es": ["es_core_news_md", "es_core_news_sm"],
+ }
+ 
+ # Languages supported for --lang / auto-detect (spaCy NER + lingua)
+-SUPPORTED_LANGS: tuple[str, ...] = ("en", "fi", "sv")
++SUPPORTED_LANGS: tuple[str, ...] = ("en", "fi", "sv", "es")
+ 
+ 
+ @dataclass
+@@ -185,6 +187,8 @@ class AnonymizerConfig:
+     entity_registry: EntityTypeRegistry = field(default_factory=builtin_entity_registry)
+     # Extra Presidio recognizers from YAML/Python plugins
+     plugin_recognizers: list[Any] = field(default_factory=list)
++    # Post-filters from config: callables (text, results) -> results, run before the allowlist
++    postfilters: list[Any] = field(default_factory=list)
+     denylist: list[DenylistEntry] = field(default_factory=list)
+     # Template packs (None = use builtin defaults; [] = no templates)
+     templates_enabled: list[str] | None = None
+@@ -334,6 +338,15 @@ def load_config(path: Path | None) -> AnonymizerConfig:
+                     + "\n  - ".join(loaded.errors)
+                 )
+             cfg.plugin_recognizers = list(loaded.recognizers)
++        if "postfilters" in data and data["postfilters"] is not None:
++            from anonymizer.anonymize.plugins import load_postfilters
++
++            loaded_pf, pf_errors = load_postfilters(data["postfilters"], base_dir=path.parent)
++            if pf_errors:
++                raise ConfigError(
++                    "Failed to load postfilter(s):\n  - " + "\n  - ".join(pf_errors)
++                )
++            cfg.postfilters = loaded_pf
+         if "denylist" in data and data["denylist"]:
+             entries: list[DenylistEntry] = []
+             for item in data["denylist"]:
+diff --git a/src/anonymizer/anonymize/engine.py b/src/anonymizer/anonymize/engine.py
+index 5076d75..5757ff1 100644
+--- a/src/anonymizer/anonymize/engine.py
++++ b/src/anonymizer/anonymize/engine.py
+@@ -1516,6 +1516,8 @@ class DocumentAnonymizer:
+                 )
+                 merged = _filter_entity_false_positives(text, merged, lex)
+ 
++        for postfilter in getattr(self.config, "postfilters", None) or []:
++            merged = list(postfilter(text, merged))
+         merged = _allowlist_filter(text, merged, self.config.allowlist)
+         return merged, decision
+ 
+diff --git a/src/anonymizer/anonymize/language.py b/src/anonymizer/anonymize/language.py
+index fe636fb..a65d3a6 100644
+--- a/src/anonymizer/anonymize/language.py
++++ b/src/anonymizer/anonymize/language.py
+@@ -1,4 +1,4 @@
+-"""Document-level language detection (EN / FI / SV)."""
++"""Document-level language detection (EN / FI / SV / ES)."""
+ 
+ from __future__ import annotations
+ 
+@@ -17,7 +17,7 @@ MAX_SAMPLE_CHARS = 12_000
+ CHUNK = 4_000
+ 
+ # Lingua language enum mapping
+-_LINGUA_CODES = ("en", "fi", "sv")
++_LINGUA_CODES = ("en", "fi", "sv", "es")
+ 
+ 
+ def sample_text_for_detection(text: str, max_chars: int = MAX_SAMPLE_CHARS) -> str:
+@@ -44,7 +44,7 @@ def _lingua_detector():
+ 
+     return (
+         LanguageDetectorBuilder.from_languages(
+-            Language.ENGLISH, Language.FINNISH, Language.SWEDISH
++            Language.ENGLISH, Language.FINNISH, Language.SWEDISH, Language.SPANISH
+         )
+         .with_preloaded_language_models()
+         .build()
+@@ -66,6 +66,7 @@ def _detect_with_lingua(sample: str) -> tuple[list[str], str]:
+         Language.ENGLISH: "en",
+         Language.FINNISH: "fi",
+         Language.SWEDISH: "sv",
++        Language.SPANISH: "es",
+     }
+     scores: dict[str, float] = {c: 0.0 for c in _LINGUA_CODES}
+     for cv in confidences:
+@@ -88,13 +89,10 @@ def _detect_with_lingua(sample: str) -> tuple[list[str], str]:
+         # Keep top 2 (or 3 if all present)
+         if t >= 0.22 and len(present) >= 3:
+             codes = [c for c, _ in ranked if scores[c] >= 0.22]
+-            return codes, (
+-                f"mixed en={scores['en']:.2f} fi={scores['fi']:.2f} "
+-                f"sv={scores['sv']:.2f}"
+-            )
++            return codes, "mixed " + " ".join(f"{c}={scores[c]:.2f}" for c in codes)
+         pair = [primary, second]
+         # stable order: en, fi, sv
+-        order = [c for c in ("en", "fi", "sv") if c in pair]
++        order = [c for c in _LINGUA_CODES if c in pair]
+         return order, f"mixed {' '.join(f'{c}={scores[c]:.2f}' for c in order)}"
+ 
+     # Weak primary still better than nothing
+@@ -103,13 +101,12 @@ def _detect_with_lingua(sample: str) -> tuple[list[str], str]:
+ 
+     return (
+         ["en", "fi"],
+-        f"low_confidence en={scores['en']:.2f} fi={scores['fi']:.2f} "
+-        f"sv={scores['sv']:.2f}",
++        "low_confidence " + " ".join(f"{c}={scores[c]:.2f}" for c in _LINGUA_CODES),
+     )
+ 
+ 
+ def detect_languages(text: str) -> tuple[list[str], str]:
+-    """Detect document languages as en / fi / sv list and a reason string."""
++    """Detect document languages as en / fi / sv / es list and a reason string."""
+     sample = sample_text_for_detection(text)
+     if not sample or not sample.strip():
+         return ["en", "fi"], "empty_text"
+@@ -172,7 +169,7 @@ def resolve_language(lang_flag: str, text: str) -> LanguageDecision:
+ def tesseract_lang_string(lang_flag: str, nlp_passes: list[str] | None = None) -> str:
+     """Tesseract language codes for OCR."""
+     raw = (lang_flag or "auto").strip().lower().replace(" ", "")
+-    tess = {"en": "eng", "fi": "fin", "sv": "swe"}
++    tess = {"en": "eng", "fi": "fin", "sv": "swe", "es": "spa"}
+     if raw in ("auto", ""):
+         if nlp_passes:
+             parts = [tess[p] for p in nlp_passes if p in tess]
+diff --git a/src/anonymizer/anonymize/plugins.py b/src/anonymizer/anonymize/plugins.py
+index b06ba2b..ddab055 100644
+--- a/src/anonymizer/anonymize/plugins.py
++++ b/src/anonymizer/anonymize/plugins.py
+@@ -235,3 +235,37 @@ def load_recognizer_plugins(
+             logger.warning("Failed to load recognizer plugin: %s", exc)
+ 
+     return out
++
++
++def load_postfilters(
++    entries: list[Any] | None,
++    *,
++    base_dir: Path | None = None,
++) -> tuple[list[Any], list[str]]:
++    """Load config ``postfilters:`` entries ({python: file.py, function: name}).
++
++    Each function receives (text, results) and returns the results to keep.
++    """
++    loaded: list[Any] = []
++    errors: list[str] = []
++    for i, raw in enumerate(entries or []):
++        try:
++            if not isinstance(raw, dict) or "python" not in raw or "function" not in raw:
++                raise ValueError("need python: path and function: name")
++            py_path = _resolve_path(str(raw["python"]), base_dir=base_dir)
++            if not py_path.is_file():
++                raise ValueError(f"Python postfilter not found: {py_path}")
++            spec = importlib.util.spec_from_file_location(
++                f"anonymizer_plugin_{py_path.stem}", py_path
++            )
++            if spec is None or spec.loader is None:
++                raise ValueError(f"Cannot load Python postfilter from {py_path}")
++            mod = importlib.util.module_from_spec(spec)
++            spec.loader.exec_module(mod)
++            fn = getattr(mod, str(raw["function"]), None)
++            if not callable(fn):
++                raise ValueError(f"function {raw['function']!r} not found in {py_path}")
++            loaded.append(fn)
++        except Exception as exc:  # noqa: BLE001 — collect for config load
++            errors.append(f"postfilters[{i}]: {exc}")
++    return loaded, errors
+diff --git a/src/anonymizer/cli.py b/src/anonymizer/cli.py
+index 573d1da..2a9937f 100644
+--- a/src/anonymizer/cli.py
++++ b/src/anonymizer/cli.py
+@@ -292,7 +292,7 @@ def _build_config(
+         cfg.entities = [e.strip() for e in entities.split(",") if e.strip()]
+         cfg.entities_explicit = True
+     elif not cfg.entities_explicit:
+-        cfg.entities = entities_for_mode(cfg.mode)
++        cfg.entities = entities_for_mode(cfg.mode, cfg.entity_registry)
+     cfg.lang = lang
+     cfg.include_dates = include_dates or cfg.include_dates
+     if score_threshold is not None:
